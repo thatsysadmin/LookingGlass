@@ -1,0 +1,20 @@
+name: F36
+on: [push]
+jobs:
+  Build_RPM_Package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Setup Docker build container
+        run: docker build -t LookingGlass_build .
+      - name: Build
+        run: docker run --name LookingGlass_build LookingGlass_build
+      - name: Getting ready for delivery
+        run: mkdir ../artifacts; docker ps -a; docker cp LookingGlass_build:/LookingGlass/LookingGlass.rpm ../artifacts; cd ../artifacts; ls; pwd
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: LookingGlass
+          path: /home/runner/work/LookingGlass/artifacts
+          if-no-files-found: warn
