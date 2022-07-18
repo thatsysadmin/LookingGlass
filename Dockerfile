@@ -1,6 +1,7 @@
 FROM fedora:36 AS lookingglass_build
 
 RUN dnf update -y
+RUN dnf install -y rpmdevtools rpmlint
 RUN dnf install -y cmake gcc gcc-c++ libglvnd-devel fontconfig-devel spice-protocol make nettle-devel \
         pkgconf-pkg-config binutils-devel libXi-devel libXinerama-devel libXcursor-devel \
         libXpresent-devel libxkbcommon-x11-devel wayland-devel wayland-protocols-devel \
