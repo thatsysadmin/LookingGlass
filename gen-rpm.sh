@@ -30,7 +30,7 @@ cat << 'EOF' > $RPMSPEC/LookingGlass.spec
 Name:           LookingGlass
 Version:        0.0.1
 Release:        1%{?dist}
-Summary:        An NVIDIA Gamestream-compatible hosting server
+Summary:        High performance VM screen share with shared memory
 BuildArch:      x86_64
 
 License:        GPLv3
@@ -40,7 +40,7 @@ Source0:        LookingGlass-0.0.1_bin.tar.gz
 Requires:       bash
 
 %description
-(h)top like task monitor for AMD and NVIDIA GPUs. It can handle multiple GPUs and print information about them in a htop familiar way.
+High performance VM screen share with shared memory
 
 %prep
 %setup -q
