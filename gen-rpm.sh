@@ -78,8 +78,12 @@ QA_RPATHS=$(( 0x0001|0x0010 )) rpmbuild -bb $RPMSPEC/LookingGlass.spec
 
 # Move RPM package into pickup location
 mv ~/rpmbuild/RPMS/x86_64/LookingGlass-0.0.1-1.fc*.x86_64.rpm /LookingGlass/LookingGlass.rpm
+echo "~/rpmbuild/RPMS"
+ls "~/rpmbuild/RPMS"
 pwd
 ls /LookingGlass
+
+ip a
 
 # Clean up; delete the rpmbuild folder we created and move back the original one
 if [ "$RPMBUILDEXISTS" == "TRUE" ]; then
