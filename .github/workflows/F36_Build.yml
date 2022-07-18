@@ -6,6 +6,7 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
+      - run: ls -a
       - name: Setup Docker build container
         run: docker build -t LookingGlass_build .
       - name: Build
