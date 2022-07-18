@@ -6,13 +6,12 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: ls -a
       - name: Setup Docker build container
         run: docker build -t lookingglass_build .
       - name: Build
-        run: docker run --name LookingGlass_build LookingGlass_build
+        run: docker run --name lookingglass_build lookingglass_build
       - name: Getting ready for delivery
-        run: mkdir ../artifacts; docker ps -a; docker cp LookingGlass_build:/LookingGlass/LookingGlass.rpm ../artifacts; cd ../artifacts; ls; pwd
+        run: mkdir ../artifacts; docker ps -a; docker cp lookingglass_build:/LookingGlass/LookingGlass.rpm ../artifacts; cd ../artifacts; ls; pwd
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
