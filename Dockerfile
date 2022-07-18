@@ -1,4 +1,4 @@
-FROM fedora:36 AS LookingGlass_build
+FROM fedora:36 AS lookingglass_build
 
 RUN dnf update -y
 RUN dnf install -y cmake gcc gcc-c++ libglvnd-devel fontconfig-devel spice-protocol make nettle-devel \

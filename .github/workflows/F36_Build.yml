@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@v3
       - run: ls -a
       - name: Setup Docker build container
-        run: docker build -t LookingGlass_build .
+        run: docker build -t lookingglass_build .
       - name: Build
         run: docker run --name LookingGlass_build LookingGlass_build
       - name: Getting ready for delivery
